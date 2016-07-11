@@ -24,4 +24,5 @@
 @property (nonatomic, assign)NSInteger canShowCount;
 @property (nonatomic, weak)id<WSChooseViewDelegate> delegate;
 
+- (void)selectItemAtIndex:(NSInteger)index;
 @end

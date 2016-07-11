@@ -10,8 +10,8 @@
 #import "WSChooseCollectionViewCell.h"
 
 
-#define leftRightMargin 10 //左右的间距
-#define itemMargin 10      //item之间的间距
+#define leftRightMargin 0 //左右的间距
+#define itemMargin 0      //item之间的间距
 #define selectTextColor [UIColor whiteColor]  //选中时的字体颜色
 #define lightTextColor [UIColor lightGrayColor]  //字体变浅时候的颜色
 
@@ -49,8 +49,6 @@
     
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-    layout.minimumLineSpacing = 10;
-    layout.minimumInteritemSpacing = 10;
     UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:self.bounds collectionViewLayout:layout];
     [self addSubview:collectionView];
     self.collectionView = collectionView;
@@ -81,14 +79,22 @@
         self.titleArr[indexPath.row + 1].titleColor = lightTextColor;
         self.titleArr[indexPath.row + 2].titleColor = lightTextColor;
     }
-    [collectionView reloadData];
     
     [collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
     
     if ([_delegate respondsToSelector:@selector(WSChooseView:DidChickItemAtIndex:)]) {
         [_delegate WSChooseView:self DidChickItemAtIndex:indexPath.row];
     }
+    
+    [collectionView reloadData]; 
 }
+
+- (void)selectItemAtIndex:(NSInteger)index{
+    
+    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:index inSection:0];
+    [self collectionView:self.collectionView didSelectItemAtIndexPath:indexPath];
+}
+
 
 #pragma mark - UICollectionViewDataSource
 
@@ -109,13 +115,18 @@
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     CGFloat itemWidth = (collectionView.bounds.size.width - (self.canShowCount - 1) * itemMargin - 2 * leftRightMargin) / self.canShowCount;
-    
+    NSLog(@"%@---%f",NSStringFromCGRect(collectionView.bounds),itemWidth);
     return CGSizeMake(itemWidth, itemWidth);
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
     
     return UIEdgeInsetsMake(0, leftRightMargin, 0, leftRightMargin);
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section{
+    
+    return itemMargin;
 }
 
 @end

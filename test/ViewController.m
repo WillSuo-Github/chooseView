@@ -24,8 +24,11 @@
     WSChooseView *chooseView = [[WSChooseView alloc] initWithFrame:CGRectMake(0, 100, [UIScreen mainScreen].bounds.size.width, 80) titleArr:titleArr];
 //    chooseView.backgroundColor = [UIColor redColor];
     chooseView.backgroundColor = [UIColor whiteColor];
+    chooseView.canShowCount = 7;
     chooseView.delegate = self;
     [self.view addSubview:chooseView];
+    
+    [chooseView selectItemAtIndex:1];
 }
 
 
