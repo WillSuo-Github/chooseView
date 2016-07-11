@@ -15,6 +15,8 @@
 		54F72C081D3381A500D32F18 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54F72C061D3381A500D32F18 /* LaunchScreen.storyboard */; };
 		54F72C131D3381A600D32F18 /* testTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54F72C121D3381A600D32F18 /* testTests.m */; };
 		54F72C1E1D3381A600D32F18 /* testUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54F72C1D1D3381A600D32F18 /* testUITests.m */; };
+		54F72C2D1D3381F400D32F18 /* WSChooseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 54F72C2C1D3381F400D32F18 /* WSChooseView.m */; };
+		54F72C301D33838100D32F18 /* WSChooseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 54F72C2F1D33838100D32F18 /* WSChooseCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,10 @@
 		54F72C191D3381A600D32F18 /* testUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = testUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		54F72C1D1D3381A600D32F18 /* testUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = testUITests.m; sourceTree = "<group>"; };
 		54F72C1F1D3381A600D32F18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		54F72C2B1D3381F400D32F18 /* WSChooseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSChooseView.h; sourceTree = "<group>"; };
+		54F72C2C1D3381F400D32F18 /* WSChooseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSChooseView.m; sourceTree = "<group>"; };
+		54F72C2E1D33838100D32F18 /* WSChooseCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSChooseCollectionViewCell.h; sourceTree = "<group>"; };
+		54F72C2F1D33838100D32F18 /* WSChooseCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSChooseCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +116,10 @@
 				54F72C061D3381A500D32F18 /* LaunchScreen.storyboard */,
 				54F72C091D3381A500D32F18 /* Info.plist */,
 				54F72BF81D3381A500D32F18 /* Supporting Files */,
+				54F72C2B1D3381F400D32F18 /* WSChooseView.h */,
+				54F72C2C1D3381F400D32F18 /* WSChooseView.m */,
+				54F72C2E1D33838100D32F18 /* WSChooseCollectionViewCell.h */,
+				54F72C2F1D33838100D32F18 /* WSChooseCollectionViewCell.m */,
 			);
 			path = test;
 			sourceTree = "<group>";
@@ -271,8 +281,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				54F72C001D3381A500D32F18 /* ViewController.m in Sources */,
+				54F72C301D33838100D32F18 /* WSChooseCollectionViewCell.m in Sources */,
 				54F72BFD1D3381A500D32F18 /* AppDelegate.m in Sources */,
 				54F72BFA1D3381A500D32F18 /* main.m in Sources */,
+				54F72C2D1D3381F400D32F18 /* WSChooseView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
